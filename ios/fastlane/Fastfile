@@ -16,26 +16,11 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "ipa打包"
-
-  lane :archive do
-    # 打包的ipa存放路径
-    outputDir = "~/Desktop/ipa/#{Time.now.strftime('%y%m%d')}"
-    # 打包的ipa名称
-    outputName = "Blog-#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}"
-    gym(
-      scheme: "Runner", # 改为你项目的scheme
-      workspace: "Runner.xcworkspace", # 如果项目使用CocoaPods需要加上
-      clean: true,
-      configuration: "Release",
-      output_directory: outputDir,
-      output_name: outputName,
-      include_bitcode: true,
-      include_symbols: true,
-      silent: true,
-      export_method:"ad-hoc"
-    )
-    # 上传ipa到fir.im服务器，在fir.im获取firim_api_token
-    firim(firim_api_token: '941d301db7eee430a7d94f0e33edcee8')
+  desc "Push a new release build to the App Store"
+  lane :release do
+    increment_build_number(xcodeproj: "Runner.xcodeproj")
+    build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
+    upload_to_app_store
+    # upload_to_app_store(skip_screenshots: true, skip_metadata: true )
   end
 end
