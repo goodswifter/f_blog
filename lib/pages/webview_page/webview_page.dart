@@ -30,6 +30,7 @@ class WebviewPage extends GetCommonView<WebviewController> {
           return true;
         },
         child: Scaffold(
+          backgroundColor: Colors.white,
           body: Column(
             children: [
               CustomAppBar(
