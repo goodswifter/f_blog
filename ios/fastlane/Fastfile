@@ -1,0 +1,41 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "ipa打包"
+
+  lane :archive do
+    # 打包的ipa存放路径
+    outputDir = "~/Desktop/ipa/#{Time.now.strftime('%y%m%d')}"
+    # 打包的ipa名称
+    outputName = "Blog-#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}"
+    gym(
+      scheme: "Runner", # 改为你项目的scheme
+      workspace: "Runner.xcworkspace", # 如果项目使用CocoaPods需要加上
+      clean: true,
+      configuration: "Release",
+      output_directory: outputDir,
+      output_name: outputName,
+      include_bitcode: true,
+      include_symbols: true,
+      silent: true,
+      export_method:"ad-hoc"
+    )
+    # 上传ipa到fir.im服务器，在fir.im获取firim_api_token
+    firim(firim_api_token: '941d301db7eee430a7d94f0e33edcee8')
+  end
+end
