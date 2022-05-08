@@ -5,7 +5,6 @@
 ///
 import 'package:blog/core/base/pages/get_save_state_view.dart';
 import 'package:blog/core/resource/color_handler.dart';
-import 'package:blog/core/resource/const_handler.dart';
 import 'package:blog/core/resource/gap_handler.dart';
 import 'package:blog/core/resource/shadow_handler.dart';
 import 'package:blog/core/resource/text_style_handler.dart';
@@ -13,7 +12,6 @@ import 'package:blog/core/router/app_routes.dart';
 import 'package:blog/generated/l10n.dart';
 import 'package:blog/pages/mine_module/mine_controller.dart';
 import 'package:blog/utils/navigator_util.dart';
-import 'package:blog/widgets/dialog/share_dialog_widget.dart';
 import 'package:blog/widgets/icon_title_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -68,13 +66,12 @@ class MineListViewWidget extends GetSaveStateView<MineController> {
         ),
 
         // 分享
-        IconTitleWidget(
-          icon: Icons.share,
-          text: S.of(context).homeShare,
-          endColor: Colors.black45,
-          onTap: () => Get.dialog(
-              const ShareDialogWidget(url: ConstHandler.downloadUrl)),
-        ),
+        // IconTitleWidget(
+        //   icon: Icons.share,
+        //   text: S.of(context).homeShare,
+        //   endColor: Colors.black45,
+        //   onTap: () => ToastUtil.show(S.of(context).nonSupport),
+        // ),
 
         // 问题反馈
         IconTitleWidget(

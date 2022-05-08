@@ -34,7 +34,10 @@ class HomeBannerWidget extends GetSaveStateView<HomeController> {
             return banner.isAssets
                 ? Container(
                     color: ColorHandler.globalYellowColor,
-                    child: Image.asset(banner.imagePath),
+                    child: Image.asset(
+                      banner.imagePath,
+                      fit: BoxFit.fill,
+                    ),
                   )
                 : Image.network(
                     banner.imagePath,

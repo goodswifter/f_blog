@@ -6,7 +6,6 @@
 import 'package:blog/entity/userinfo_entity.dart';
 import 'package:blog/utils/sp_util/sp_util.dart';
 import 'package:blog/utils/toast_util.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 

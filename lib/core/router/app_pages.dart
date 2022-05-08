@@ -12,7 +12,6 @@ import 'package:blog/pages/login_register_module/login_page.dart';
 import 'package:blog/pages/login_register_module/register_binding.dart';
 import 'package:blog/pages/login_register_module/register_page.dart';
 import 'package:blog/pages/main_module/main_binding.dart';
-import 'package:blog/pages/complex_module/complex_page/complex_page.dart';
 import 'package:blog/pages/main_module/main_page.dart';
 import 'package:blog/pages/mine_module/about/about_page.dart';
 import 'package:blog/pages/mine_module/collect/collect_page.dart';

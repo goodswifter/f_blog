@@ -4,11 +4,9 @@
 /// Description  : 设置页面 controller层
 ///
 import 'package:blog/core/base/controller/base_get_controller.dart';
-import 'package:blog/core/router/app_routes.dart';
 import 'package:blog/generated/l10n.dart';
 import 'package:blog/pages/mine_module/mine_controller.dart';
 import 'package:blog/utils/file/cache_util.dart';
-import 'package:blog/utils/sp_util/sp_util.dart';
 import 'package:blog/utils/toast_util.dart';
 import 'package:get/get.dart';
 

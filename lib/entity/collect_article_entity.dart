@@ -1,57 +1,60 @@
-/// 
+///
 /// Author       : zhongaidong
 /// Date         : 2022-04-25 19:47:22
 /// Description  : 收藏详情实体类
-/// 
+///
 import 'dart:convert';
 
-CollectArticleEntity collectDetailEntityFromJson(String str) => CollectArticleEntity.fromJson(json.decode(str));
+CollectArticleEntity collectDetailEntityFromJson(String str) =>
+    CollectArticleEntity.fromJson(json.decode(str));
 
-String collectDetailEntityToJson(CollectArticleEntity data) => json.encode(data.toJson());
+String collectDetailEntityToJson(CollectArticleEntity data) =>
+    json.encode(data.toJson());
 
 class CollectArticleEntity {
-    CollectArticleEntity({
-        this.author = '',
-        this.chapterId = 0,
-        this.chapterName = '',
-        this.courseId = 0,
-        this.desc = '',
-        this.envelopePic = '',
-        this.id = 0,
-        this.link = '',
-        this.niceDate = '',
-        this.origin = '',
-        this.originId = 0,
-        this.publishTime = 0,
-        this.title = '',
-        this.userId = 0,
-        this.visible = 0,
-        this.zan = 0,
-    });
+  CollectArticleEntity({
+    this.author = '',
+    this.chapterId = 0,
+    this.chapterName = '',
+    this.courseId = 0,
+    this.desc = '',
+    this.envelopePic = '',
+    this.id = 0,
+    this.link = '',
+    this.niceDate = '',
+    this.origin = '',
+    this.originId = 0,
+    this.publishTime = 0,
+    this.title = '',
+    this.userId = 0,
+    this.visible = 0,
+    this.zan = 0,
+  });
 
-    String author;
-    int chapterId;
-    String chapterName;
-    int courseId;
-    String desc;
-    String envelopePic;
-    int id;
-    String link;
-    String niceDate;
-    String origin;
-    int originId;
-    int publishTime;
-    String title;
-    int userId;
-    int visible;
-    int zan;
+  String author;
+  int chapterId;
+  String chapterName;
+  int courseId;
+  String desc;
+  String envelopePic;
+  int id;
+  String link;
+  String niceDate;
+  String origin;
+  int originId;
+  int publishTime;
+  String title;
+  int userId;
+  int visible;
+  int zan;
 
-    factory CollectArticleEntity.fromJson(Map<String, dynamic> json) => CollectArticleEntity(
+  factory CollectArticleEntity.fromJson(Map<String, dynamic> json) =>
+      CollectArticleEntity(
         author: json["author"],
         chapterId: json["chapterId"],
         chapterName: json["chapterName"],
         courseId: json["courseId"],
-        desc: json["desc"],
+        desc: json["desc"].toString().replaceAll('Android', ''),
         envelopePic: json["envelopePic"],
         id: json["id"],
         link: json["link"],
@@ -59,13 +62,13 @@ class CollectArticleEntity {
         origin: json["origin"],
         originId: json["originId"],
         publishTime: json["publishTime"],
-        title: json["title"],
+        title: json["title"].toString().replaceAll('Android', ''),
         userId: json["userId"],
         visible: json["visible"],
         zan: json["zan"],
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "author": author,
         "chapterId": chapterId,
         "chapterName": chapterName,
@@ -82,5 +85,5 @@ class CollectArticleEntity {
         "userId": userId,
         "visible": visible,
         "zan": zan,
-    };
+      };
 }

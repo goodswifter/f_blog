@@ -112,7 +112,7 @@ class ArticleEntity {
         superChapterId: json['superChapterId'],
         superChapterName: json['superChapterName'],
         tags: List<Tag>.from(json['tags'].map((x) => Tag.fromJson(x))),
-        title: json['title'].toString().replaceAll('Android', '安|卓'),
+        title: json['title'],
         type: json['type'],
         userId: json['userId'],
         visible: json['visible'],

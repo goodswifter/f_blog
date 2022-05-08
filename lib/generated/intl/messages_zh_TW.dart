@@ -69,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginButton": MessageLookupByLibrary.simpleMessage("登錄"),
         "loginSuccess": MessageLookupByLibrary.simpleMessage("登錄成功"),
         "loginTip": MessageLookupByLibrary.simpleMessage("請先登錄"),
+        "nonSupport": MessageLookupByLibrary.simpleMessage("暫不支持喲~"),
         "notSupportLikes": MessageLookupByLibrary.simpleMessage("暫不支持點讚喲~"),
         "pointsDetailTitle": MessageLookupByLibrary.simpleMessage("積分明細"),
         "pointsNotifySuccess": MessageLookupByLibrary.simpleMessage("刷新成功"),

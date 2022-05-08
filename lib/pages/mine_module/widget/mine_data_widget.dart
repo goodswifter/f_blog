@@ -10,7 +10,6 @@ import 'package:blog/generated/l10n.dart';
 import 'package:blog/pages/mine_module/mine_controller.dart';
 import 'package:blog/pages/mine_module/widget/data_content_item.dart';
 import 'package:blog/utils/navigator_util.dart';
-import 'package:blog/utils/toast_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

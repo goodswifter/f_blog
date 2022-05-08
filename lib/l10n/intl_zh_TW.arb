@@ -100,5 +100,6 @@
 	"shareTitle": "我的分享",
 	"collectSuccess": "收藏成功",
 	"collectQuit": "取消收藏成功",
-	"notSupportLikes": "暫不支持點讚喲~"
+	"notSupportLikes": "暫不支持點讚喲~",
+	"nonSupport": "暫不支持喲~"
 }

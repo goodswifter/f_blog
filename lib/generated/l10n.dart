@@ -1069,6 +1069,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Nonsupport this function~`
+  String get nonSupport {
+    return Intl.message(
+      'Nonsupport this function~',
+      name: 'nonSupport',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -9,7 +9,6 @@ import 'package:blog/core/resource/text_style_handler.dart';
 import 'package:blog/core/router/app_routes.dart';
 import 'package:blog/generated/l10n.dart';
 import 'package:blog/pages/splash_page/splash_controller.dart';
-import 'package:blog/utils/sp_util/sp_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -4,6 +4,7 @@
 /// Description  : 首页 - 搜索 controller层
 ///
 import 'package:blog/core/base/controller/base_page_get_controller.dart';
+import 'package:blog/entity/article_entity.dart';
 import 'package:blog/entity/hot_word_entity.dart';
 import 'package:blog/utils/keyboard_util.dart';
 import 'package:blog/utils/refresh_util.dart';
@@ -53,7 +54,21 @@ class SearchController extends BasePageGetController {
         // 下拉刷新需要清除列表
         if (refresh != RefreshState.up) datas.clear();
 
-        datas.addAll(data);
+        List temps = [];
+        for (var i = 0; i < data.length; i++) {
+          ArticleEntity article = data[i];
+          if (article.title.contains('Android') ||
+              article.desc.contains('Android') ||
+              article.shareUser.contains('Android') ||
+              article.author.contains('Android') ||
+              article.title.contains('android') ||
+              article.desc.contains('android') ||
+              article.shareUser.contains('android') ||
+              article.author.contains('android')) continue;
+          temps.add(article);
+        }
+
+        datas.addAll(temps);
 
         showSuccess(datas);
         update();

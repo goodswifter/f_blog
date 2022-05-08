@@ -100,5 +100,6 @@
 	"shareTitle": "My share",
 	"collectSuccess": "Collection success",
 	"collectQuit": "Unfavorite successfully",
-	"notSupportLikes": "Don't support likes at the moment~"
+	"notSupportLikes": "Don't support likes at the moment~",
+	"nonSupport": "Nonsupport this function~"
 }

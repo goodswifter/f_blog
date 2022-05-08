@@ -83,6 +83,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginSuccess":
             MessageLookupByLibrary.simpleMessage("login successful"),
         "loginTip": MessageLookupByLibrary.simpleMessage("Please login first"),
+        "nonSupport":
+            MessageLookupByLibrary.simpleMessage("Nonsupport this function~"),
         "notSupportLikes": MessageLookupByLibrary.simpleMessage(
             "Don\'t support likes at the moment~"),
         "pointsDetailTitle":
