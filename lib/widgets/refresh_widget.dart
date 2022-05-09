@@ -6,6 +6,7 @@
 /// 不需要暴露给使用者，当然，此方法只能使用Getx框架有效
 ///
 import 'package:blog/core/base/controller/base_page_get_controller.dart';
+import 'package:blog/core/resource/gap_handler.dart';
 import 'package:blog/core/resource/r.dart';
 import 'package:blog/core/resource/text_style_handler.dart';
 import 'package:blog/generated/l10n.dart';
@@ -57,7 +58,7 @@ class RefreshWidget<T extends BasePageGetController> extends StatefulWidget {
   final VoidCallback? onLoadMore;
 
   /// 子类，必须是ListView
-  final Widget child;
+  final ListView child;
 
   @override
   State<RefreshWidget> createState() => _RefreshWidgetState();
@@ -221,10 +222,20 @@ class _RefreshWidgetState extends State<RefreshWidget>
           Obx(() => Visibility(
                 visible:
                     widget.getController.loadState.value == LoadState.error,
-                child: Lottie.asset(
-                  R.assetsLottieRefreshErrorJson,
-                  width: 200,
-                  animate: true,
+                child: Column(
+                  children: [
+                    Lottie.asset(
+                      R.assetsLottieRefreshErrorJson,
+                      width: 200,
+                      animate: true,
+                    ),
+                    GapHandler.vGap10,
+                    ElevatedButton(
+                      onPressed: () =>
+                          widget.getController.requestData(controller),
+                      child: const Text('重新加载'),
+                    ),
+                  ],
                 ),
               )),
         ],

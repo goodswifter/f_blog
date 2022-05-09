@@ -84,7 +84,8 @@ class HomeController extends BasePageGetController {
       page: page,
       success: (data, over) {
         // 刷新成功
-        RefreshUtil.onSuccess(controller, refresh, over);
+        // RefreshUtil.onSuccess(controller, refresh, over);
+        RefreshUtil.onError(controller, RefreshState.down);
 
         List temps = [];
         for (var i = 0; i < data.length; i++) {
