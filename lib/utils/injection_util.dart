@@ -11,6 +11,8 @@ import 'package:blog/core/http/repository/userinfo_request.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../pages/main_module/main_controller.dart';
+
 class InjectionUtil {
   /// 初始化依赖注入, 可全局使用
   static init() {
@@ -22,5 +24,6 @@ class InjectionUtil {
     Get.lazyPut(() => ProjectRequest());
     Get.lazyPut(() => MineRequest());
     Get.lazyPut(() => UserinfoRequest());
+    Get.lazyPut(() => MainController());
   }
 }
