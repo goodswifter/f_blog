@@ -12,6 +12,8 @@ import 'package:blog/entity/banner_entity.dart';
 import 'package:blog/entity/wechat_public_entity.dart';
 import 'package:blog/utils/refresh_util.dart';
 import 'package:blog/widgets/refresh_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -45,33 +47,33 @@ class HomeController extends BasePageGetController {
 
   /// 请求获取首页Banner图片
   getBanner() {
-    List bannerList = [
-      R.assetsImagesBanner0Png,
-      R.assetsImagesBanner1Png,
-      R.assetsImagesBanner2Png
-    ];
+    // List bannerList = [
+    //   R.assetsImagesBanner0Png,
+    //   R.assetsImagesBanner1Png,
+    //   R.assetsImagesBanner2Png
+    // ];
     complexRequest.getBanners(success: (data) {
       // 添加自定义的积分排行榜图片
       banners.add(BannerEntity(
         imagePath: R.assetsImagesRankingIntegralPng,
         isAssets: true,
       ));
-      for (var i = 0; i < data.length; i++) {
-        data[i].isAssets = true;
-        if (i < bannerList.length) {
-          data[i].imagePath = bannerList[i];
-        } else {
-          data[i].imagePath = R.assetsImagesBanner0Png;
-        }
-      }
+      // for (var i = 0; i < data.length; i++) {
+      //   data[i].isAssets = true;
+      //   if (i < bannerList.length) {
+      //     data[i].imagePath = bannerList[i];
+      //   } else {
+      //     data[i].imagePath = R.assetsImagesBanner0Png;
+      //   }
+      // }
       banners.addAll(data);
 
       // 预缓存banner图片
-      // for (var element in data) {
-      //   if (Get.context != null) {
-      //     precacheImage(NetworkImage(element.imagePath), Get.context!);
-      //   }
-      // }
+      for (var element in data) {
+        if (Get.context != null) {
+          precacheImage(NetworkImage(element.imagePath), Get.context!);
+        }
+      }
       update();
     });
   }
@@ -84,27 +86,12 @@ class HomeController extends BasePageGetController {
       page: page,
       success: (data, over) {
         // 刷新成功
-        // RefreshUtil.onSuccess(controller, refresh, over);
-        RefreshUtil.onError(controller, RefreshState.down);
-
-        List temps = [];
-        for (var i = 0; i < data.length; i++) {
-          ArticleEntity article = data[i];
-          if (article.title.contains('Android') ||
-              article.desc.contains('Android') ||
-              article.shareUser.contains('Android') ||
-              article.author.contains('Android') ||
-              article.title.contains('android') ||
-              article.desc.contains('android') ||
-              article.shareUser.contains('android') ||
-              article.author.contains('android')) continue;
-          temps.add(article);
-        }
+        RefreshUtil.onSuccess(controller, refresh, over);
 
         // 下拉刷新需要清除列表
         if (refresh != RefreshState.up) datas.clear();
 
-        datas.addAll(temps);
+        datas.addAll(data);
         showSuccess(datas);
 
         // 为了防止动画每次都加载，所以只需要在第一次出现时加载一次

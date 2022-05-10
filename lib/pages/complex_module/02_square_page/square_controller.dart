@@ -21,21 +21,7 @@ class SquareController extends BasePageGetController {
           // 初次加载和下拉刷新需要清除列表
           if (refresh != RefreshState.up) datas.clear();
 
-          List temps = [];
-          for (var i = 0; i < data.length; i++) {
-            ArticleEntity article = data[i];
-            if (article.title.contains('Android') ||
-                article.desc.contains('Android') ||
-                article.shareUser.contains('Android') ||
-                article.author.contains('Android') ||
-              article.title.contains('android') ||
-              article.desc.contains('android') ||
-              article.shareUser.contains('android') ||
-              article.author.contains('android')) continue;
-            temps.add(article);
-          }
-
-          datas.addAll(temps);
+          datas.addAll(data);
           showSuccess(datas);
           update();
         },
