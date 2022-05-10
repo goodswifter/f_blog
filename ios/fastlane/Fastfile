@@ -21,6 +21,58 @@ platform :ios do
     increment_build_number(xcodeproj: "Runner.xcodeproj")
     build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
     upload_to_app_store
-    # upload_to_app_store(skip_screenshots: true, skip_metadata: true )
+  end
+
+  lane :tofir do
+    # Deletes the Xcode Derived Data
+    clear_derived_data
+
+    # discarding uncommitted changes
+    reset_git_repo(
+      force: true,
+      skip_clean: true,
+      disregard_gitignore: false
+    )
+
+
+    # git pull only the tags, no commits
+    git_pull(only_tags: true)
+
+    # get recent tag
+    recentTagName = '1.0.1'
+
+    # （fastlane-plugin-git_switch_branch为插件）check out tag
+    git_switch_branch(branch: recentTagName)
+
+    # submodule init and update
+    git_submodule_update(
+      init: true,
+      recursive: true
+    )
+
+    # pod install
+    cocoapods
+
+    scheme = "Runner"
+    ipa_dir  = "./fastlane_build/" + Time.new.strftime('%Y-%m-%d')
+    ipa_name = recentTagName + "_" + Time.new.strftime('%Y%m%d%H%M')
+
+    # gym用来编译 打包 签名
+    gym(
+     output_directory: ipa_dir,
+     output_name: "#{ipa_name}.ipa",
+      clean: true,
+      workspace: scheme + ".xcworkspace",
+      scheme: scheme,
+      export_xcargs: "-allowProvisioningUpdates",
+      export_options: {
+        method: "ad-hoc", # 指定打包方式
+        teamID: "25ZE6TVB9T",
+        thinning: "<none>",
+      }
+    )
+
+    # （fastlane-plugin-firim为插件）上传ipa到fir.im服务器，在fir.im获取firim_api_token
+    firim(firim_api_token: "941d301db7eee430a7d94f0e33edcee8")
   end
 end

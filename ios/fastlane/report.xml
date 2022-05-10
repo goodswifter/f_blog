@@ -5,22 +5,7 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.00078">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="1: clear_derived_data" time="0.220699">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="2: reset_git_repo" time="0.057924">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="3: git_pull" time="3.991351">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000947">
         
       </testcase>
     
