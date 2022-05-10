@@ -32,7 +32,7 @@
 /build/
 
 # Fastlane
-**/report.xml
+ios/fastlane/report.xml
 
 # Web related
 lib/generated_plugin_registrant.dart

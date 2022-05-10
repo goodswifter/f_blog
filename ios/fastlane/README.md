@@ -15,21 +15,13 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios release
+### ios fir
 
 ```sh
-[bundle exec] fastlane ios release
+[bundle exec] fastlane ios fir
 ```
 
-Push a new release build to the App Store
-
-### ios tofir
-
-```sh
-[bundle exec] fastlane ios tofir
-```
-
-
+上传iOSApp到fir.im平台
 
 ----
 
