@@ -31,6 +31,9 @@
 .pub/
 /build/
 
+# Fastlane
+**/report.xml
+
 # Web related
 lib/generated_plugin_registrant.dart
 
