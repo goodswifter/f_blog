@@ -39,7 +39,7 @@ platform :ios do
     git_pull(only_tags: true)
 
     # get recent tag
-    recentTagName = '1.0.1'
+    recentTagName = 'main'
 
     # （fastlane-plugin-git_switch_branch为插件）check out tag
     git_switch_branch(branch: recentTagName)
