@@ -1,7 +1,7 @@
 ///
 /// Author       : zhongaidong
 /// Date         : 2022-04-25 18:27:52
-/// Description  : Wevview view层
+/// Description  : Webview view层
 ///
 import 'package:blog/core/base/pages/get_common_view.dart';
 import 'package:blog/core/resource/color_handler.dart';
@@ -58,6 +58,7 @@ class WebviewPage extends GetCommonView<WebviewController> {
                   children: [
                     WebView(
                       initialUrl: controller.detail.link,
+                      backgroundColor: Colors.white,
                       javascriptMode: JavascriptMode.unrestricted,
                       onProgress: (pro) {
                         controller.progress.value = (pro / 100).toDouble();

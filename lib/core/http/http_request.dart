@@ -13,13 +13,13 @@ import 'http_exception.dart';
 import 'request_api.dart';
 
 /// 连接超时时间
-const int _connectTimeout = 60000;
+const int _connectTimeout = 10000;
 
 /// 接收超时时间
-const int _receiveTimeout = 60000;
+const int _receiveTimeout = 10000;
 
 /// 发送超时时间
-const int _sendTimeout = 60000;
+const int _sendTimeout = 10000;
 
 typedef Success<T> = Function(T data);
 /// 刷新成功回调, [over]为是否是最后一页
@@ -112,9 +112,7 @@ void _onError(int code, String msg, Fail? fail) {
     code = HttpException.unknownError;
     msg = '未知异常';
   }
-  if (fail != null) {
-    fail(code, msg);
-  }
+  fail?.call(code, msg);
 }
 
 /// 请求类型枚举

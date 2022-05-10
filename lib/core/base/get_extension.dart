@@ -25,7 +25,7 @@ extension GetExtension on GetInterface {
     );
   }
 
-  /// 显示公共弹窗
+  /// 显示公共弹窗∏
   showDialog({
     String title = '',
     String content = '',
