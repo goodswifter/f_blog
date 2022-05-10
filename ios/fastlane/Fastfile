@@ -24,7 +24,7 @@ platform :ios do
     # 在这里我建议每一个打的包的Build都要不一样，这样crash了拿到日志，可以对应到ipa上
     increment_build_number_in_plist(
         target: scheme,
-        build_number: '1'
+        build_number: '2'
     )
     increment_version_number_in_plist(
         target: scheme,
@@ -39,8 +39,8 @@ platform :ios do
         teamID: "25ZE6TVB9T" # 在developer网站获取
       },
         xcargs: "-allowProvisioningUpdates",
-        output_directory: ipa_dir,
-        output_name: ipa_name
+        # output_directory: ipa_dir,
+        # output_name: ipa_name
     )
     # 上传ipa到fir.im服务器，在fir.im获取firim_api_token
     firim(firim_api_token: "941d301db7eee430a7d94f0e33edcee8")  # token 在fir 上查看。
