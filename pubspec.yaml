@@ -12,8 +12,6 @@ dependencies:
   # 添加国际化依赖
   flutter_localizations:
     sdk: flutter
-  # 本地化 https://pub.flutter-io.cn/packages/intl
-  # intl: ^0.17.0
   # GetX状态管理框架 https://pub.flutter-io.cn/packages/get
   get: ^4.6.1
   # 网络请求 https://pub.flutter-io.cn/packages/dio
@@ -40,8 +38,6 @@ dependencies:
   url_launcher: ^6.1.0
   # 加载html标签 https://pub.flutter-io.cn/packages/flutter_html
   flutter_html: ^3.0.0-alpha.3
-  # 链家组件库 https://pub.flutter-io.cn/packages/bruno
-  # bruno: ^2.1.1
   # HTML字符串转义 https://pub.flutter-io.cn/packages/html
   html: ^0.15.0
   # 权限申请框架 https://pub.flutter-io.cn/packages/permission_handler
@@ -67,6 +63,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^1.0.4
   rename_app: ^1.1.0
+  dart_code_metrics: ^4.15.0
 
 flutter:
   # the material Icons class.

@@ -4,7 +4,6 @@
 /// Description  : 项目 controller层
 ///
 import 'package:blog/core/base/controller/base_page_get_controller.dart';
-import 'package:blog/entity/article_entity.dart';
 import 'package:blog/utils/refresh_util.dart';
 import 'package:blog/widgets/refresh_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';

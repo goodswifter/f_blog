@@ -7,13 +7,11 @@ import 'dart:math';
 
 import 'package:blog/core/base/controller/base_page_get_controller.dart';
 import 'package:blog/core/resource/r.dart';
-import 'package:blog/entity/article_entity.dart';
 import 'package:blog/entity/banner_entity.dart';
 import 'package:blog/entity/wechat_public_entity.dart';
 import 'package:blog/utils/refresh_util.dart';
 import 'package:blog/widgets/refresh_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
