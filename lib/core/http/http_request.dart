@@ -36,7 +36,7 @@ class HttpRequest {
   /// 创建 dio 实例对象
   static Dio createInstance([bool isJson = false]) {
     if (_dio != null) {
-      _dio?.options.contentType =
+      _dio!.options.contentType =
           isJson ? Headers.jsonContentType : Headers.formUrlEncodedContentType;
     } else {
       // 全局属性：请求前缀、连接超时时间、响应超时时间、发送超时时间

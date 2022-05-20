@@ -73,7 +73,6 @@ class Request {
     // 开启请求
     HttpRequest.request(method, url, params: params, isJson: isJson,
         success: (result) {
-      print(result);
       if (dialog) Get.dismiss();
 
       if (success != null && result is Map<String, dynamic>) {

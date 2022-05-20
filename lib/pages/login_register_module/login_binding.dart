@@ -1,8 +1,8 @@
-/// 
+///
 /// Author       : zhongaidong
 /// Date         : 2022-04-23 18:38:05
 /// Description  : 登录 binding层
-/// 
+///
 import 'package:get/get.dart';
 
 import '../complex_module/01_home_page/home_controller.dart';
