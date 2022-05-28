@@ -40,7 +40,6 @@ class SplashAnimateWidget extends GetCommonView<SplashController> {
               margin: const EdgeInsets.only(top: 16),
               child: Text(
                 S.of(context).appName,
-                // 'hh',
                 style: TextStyleHandler.styleBlack36,
               ),
             ),
