@@ -16,6 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'sp_key.dart';
 
 class SpUtil {
+  
   /// 获取存储对象
   static final SharedPreferences sp = Get.find<SharedPreferences>();
 
